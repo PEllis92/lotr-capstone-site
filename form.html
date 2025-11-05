@@ -1,0 +1,103 @@
+<!--
+Name: Peter Ellis
+File Name: form.html, Form Page
+Date: 10/28/2025
+Assignment: Capstone Project
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tales of Middle-Earth - Contact Form</title>
+    <link rel="icon" href="images/One_Ring.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="layout">
+      <header class="site-header" role="banner">
+        <h1>Contact Form</h1>
+      </header>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="landmarks.html">Landmarks</a>
+        <a href="films.html">Films</a>
+        <a href="form.html" class="active">Form</a>
+      </nav>
+
+      <!-- Background Music -->
+      <aside class="media-bar" aria-label="Background music">
+        <audio controls autoplay>
+          <source src="audio/Website_Song.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </aside>
+
+      <main class="site-main" id="main-content">
+        <section aria-labelledby="contact-heading" class="panel">
+          <h2 id="contact-heading">Contact Tales of Middle-Earth</h2>
+          <p>Required fields are marked with an asterisk *</p>
+
+          <form
+            method="post"
+            action="https://webdevbasics.net/scripts/demo.php"
+          >
+            <label for="FirstName">First Name</label>
+            <input type="text" id="First Name" name="First Name" required />
+
+            <label for="LastName">Last Name</label>
+            <input type="text" id="Last Name" name="Last Name" required />
+
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" required />
+
+            <label for="Phone">Phone</label>
+            <input type="tel" id="Phone" name="Phone" />
+
+            <label for="Realm">Realm To Visit</label>
+            <select id="Realm" name="Realm">
+              <option value=""></option>
+              <option value="Lothlorien">Lothlórien</option>
+              <option value="Rivendell">Rivendell</option>
+              <option value="Mirkwood">Mirkwood</option>
+              <option value="Grey Havens">Grey Havens</option>
+              <option value="Valinor">Valinor</option>
+            </select>
+
+            <label for="Visit Date">Preferred Visit Date</label>
+            <input type="date" id="Visit Date" name="Visit Date" />
+
+            <label for="Companions">Number of Companions</label>
+            <input
+              type="number"
+              id="Companions"
+              name="Companions"
+              min="0"
+              max="9"
+            />
+
+            <label for="Message">Message:</label>
+            <textarea
+              id="Message"
+              name="Message"
+              rows="4"
+              cols="30"
+              placeholder="Write your message here."
+            ></textarea>
+
+            <input type="submit" value="Send Message" />
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <p>2025 Peter Ellis - Capstone Project Table - All Rights Reserved.</p>
+        <a href="mailto:pellis2@my.westga.edu">pellis2@my.westga.edu</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,488 @@
+/*
+Name: Peter Ellis
+File Name: styles.css, CSS Page
+Date: 10/28/2025
+Assignment: Capstone Project
+*/
+
+@font-face {
+  font-family: "MorrisRoman-Black";
+  src: url("fonts/MorrisRoman-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --gold: #ffeeb6;
+  --gold-2: #ffffff;
+  --text: #ffffff;
+  --muted: #dcdcdc;
+  --accent: #ffffff;
+  --card-border: rgba(255, 255, 255, 0.25);
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  color: var(--text);
+  font-family: "MorrisRoman-Black", serif;
+  background-image: url("images/Background_WebPage_Front.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  line-height: 1.5;
+  font-size: 1.8rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: #000;
+  color: var(--gold);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.site-header {
+  grid-area: header;
+  background: var(--bg-overlay);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 10px 0;
+  margin: 10px auto;
+  width: 98%;
+  height: auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 2.2rem;
+  text-shadow: 1px 1px 2px rgba(255, 223, 0, 0.7),
+    -1px -1px 2px rgba(192, 192, 192, 0.6);
+}
+
+.media-bar {
+  grid-area: audio;
+  background: var(--bg-overlay);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px 10px;
+  width: 98%;
+  margin: 0 auto 10px auto;
+  text-align: center;
+}
+
+.media-bar audio {
+  width: 100%;
+  max-width: 700px;
+  height: 32px;
+}
+
+.site-footer {
+  grid-area: footer;
+  background: var(--bg-overlay);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 6px 0;
+  margin: 10px auto 0 auto;
+  width: 98%;
+  height: auto;
+  line-height: 1.2;
+}
+
+.site-footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "audio audio"
+    "nav main"
+    "footer footer";
+  grid-template-columns: 220px 1fr;
+  grid-auto-rows: auto;
+  gap: 10px;
+  margin: 10px;
+}
+
+.site-nav {
+  grid-area: nav;
+}
+
+.site-main {
+  grid-area: main;
+}
+
+.media-bar {
+  grid-area: audio;
+}
+
+.site-nav {
+  background: var(--bg-overlay);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
+  padding: 12px 0;
+  height: max-content;
+}
+
+.nav-toggle {
+  display: none;
+  margin: 0 12px 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li {
+  margin: 6px 10px;
+}
+
+.site-nav a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  text-shadow: 1px 1px 2px rgba(255, 223, 0, 0.7),
+    -1px -1px 2px rgba(192, 192, 192, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  transform: translateY(-1px);
+}
+
+.site-nav a.active {
+  color: var(--gold-2);
+  box-shadow: inset 0 0 0 2px var(--gold);
+}
+
+.site-main {
+  background: var(--bg-overlay);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
+  padding: 20px;
+}
+
+.panel {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-block: 12px;
+}
+
+.panel h2,
+.panel h3 {
+  margin-top: 0;
+  text-shadow: 1px 1px 2px rgba(255, 243, 166, 0.7),
+    -1px -1px 2px rgba(192, 192, 192, 0.6);
+}
+
+img {
+  display: block;
+  margin: 12px auto;
+  width: 90%;
+  max-width: 700px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  box-shadow: var(--shadow);
+}
+
+.video-block {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 232, 148, 0.4);
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: none;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .video-frame iframe {
+    height: 350px;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+thead th {
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+tbody tr:hover td {
+  background: rgba(248, 213, 100, 0.08);
+}
+
+a {
+  color: var(--gold);
+}
+
+a:hover,
+a:focus {
+  color: var(--gold-2);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-areas:
+      "header"
+      "audio"
+      "nav"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+  .site-nav {
+    position: static;
+    padding-bottom: 10px;
+  }
+  .nav-toggle {
+    display: inline-block;
+  }
+  .site-nav[data-collapsed="true"] ul {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .site-header h1 {
+    font-size: 2.6rem;
+  }
+  body {
+    font-size: 1.12rem;
+  }
+}
+
+form {
+  border: 1px solid var(--card-border);
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+label {
+  float: left;
+  display: block;
+  text-align: right;
+  width: 10em;
+  padding-right: 1em;
+  margin-bottom: 0.6em;
+  color: var(--gold);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  margin-bottom: 1em;
+  width: 20em;
+  font-family: "MorrisRoman-Black", serif;
+  font-size: 1em;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+textarea::placeholder {
+  color: var(--gold);
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  outline: 2px solid var(--gold);
+  box-shadow: 0 0 10px gold;
+}
+
+option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+option[disabled] {
+  color: #888888;
+  font-style: italic;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) brightness(200%);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(85%) sepia(60%) saturate(500%) hue-rotate(20deg)
+    brightness(150%);
+}
+
+input[type="submit"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 11em;
+  box-shadow: 0 0 10px rgba(255, 255, 150, 0.3);
+  transition: 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(218, 165, 32, 0.9);
+  color: #000;
+  box-shadow: 0 0 12px gold;
+}
+
+form::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Finished Peter Ellis */
