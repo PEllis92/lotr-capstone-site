@@ -1,0 +1,98 @@
+<!--
+Name: Peter Ellis
+File Name: products.html, Products Page
+Date: 11/18/2025
+Assignment: Capstone Project
+E-Commerce: Style
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tales of Middle-Earth Products</title>
+    <link rel="icon" href="images/One_Ring.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <audio id="clickSound" src="audio/Click%201.mp3" preload="auto"></audio>
+  </head>
+
+  <body>
+    <div class="layout">
+      <header class="site-header">
+        <h1>Middle-Earth Collectibles</h1>
+      </header>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="landmarks.html">Landmarks</a>
+        <a href="films.html">Films</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="form.html">Form</a>
+      </nav>
+
+      <main class="site-main">
+        <h2>Products from Middle-Earth</h2>
+        <p>
+          Choose replicas that are beautifully crafted within the world of
+          Middle-Earth!
+        </p>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/One_Ring_Product.png" alt="Replica One Ring" />
+            <h3>The One Ring - Replica Jewelry</h3>
+            <p class="price">$10.00</p>
+            <form method="post" action="https://webdevbasics.net/cart.html">
+              <input type="submit" value="Add to Cart" class="cart-btn" />
+            </form>
+          </div>
+
+          <div class="product-card">
+            <img src="images/Map_Middle_Earth.png" alt="Map of Middle-Earth" />
+            <h3>Map of Middle-Earth (With Picture Frame)</h3>
+            <p class="price">$20.00</p>
+            <form method="post" action="https://webdevbasics.net/cart.html">
+              <input type="submit" value="Add to Cart" class="cart-btn" />
+            </form>
+          </div>
+
+          <div class="product-card">
+            <img src="images/Elf_Outfit.png" alt="Elven Outfit" />
+            <h3>Elven Mirkwood Outfit</h3>
+            <p class="price">$100.00</p>
+            <form method="post" action="https://webdevbasics.net/cart.html">
+              <input type="submit" value="Add to Cart" class="cart-btn" />
+            </form>
+          </div>
+
+          <div class="product-card">
+            <img src="images/Elf_Armour.png" alt="Elven Armour" />
+            <h3>Elven Mirkwood Armour</h3>
+            <p class="price">$200.00</p>
+            <form method="post" action="https://webdevbasics.net/cart.html">
+              <input type="submit" value="Add to Cart" class="cart-btn" />
+            </form>
+          </div>
+
+          <div class="product-card">
+            <img src="images/Elf_Sword.png" alt="Elven Sword" />
+            <h3>Elven Sword</h3>
+            <p class="price">$50.00</p>
+            <form method="post" action="https://webdevbasics.net/cart.html">
+              <input type="submit" value="Add to Cart" class="cart-btn" />
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <p>2025 Peter Ellis - Capstone Project Table - All Rights Reserved.</p>
+        <a href="mailto:pellis2@my.westga.edu">pellis2@my.westga.edu</a>
+      </footer>
+    </div>
+
+    <script src="Sound.js"></script>
+  </body>
+</html>
